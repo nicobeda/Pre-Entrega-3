@@ -1,0 +1,28 @@
+{% extends "Entrega/inicio.html" %}
+
+{% load static %}
+
+{% block titulo %}
+Clientes
+{% endblock titulo %}
+
+{% block parte1 %}
+<p class="lead">Llenar para hacer un agregado a la base de datos</p>
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ miFormulario.as_table }}
+    </table>
+    <input type="submit" value="Enviar">
+
+</form>
+<p class="lead">Busqueda en la base de datos</p>
+<ul>
+    {% for cliente in clientes %}
+    <li> {{ cliente.nombre }} </li>
+    <li> {{ cliente.edad }} </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock parte1 %}

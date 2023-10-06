@@ -1,0 +1,26 @@
+{% extends "Entrega/inicio.html" %}
+
+{% load static %}
+
+{% block titulo %}
+Clientes
+{% endblock titulo %}
+
+{% block parte1 %}
+
+    <ul>
+
+        {% for cliente in clientes %}
+
+        <li>
+             {{ cliente.nombre }} 
+            
+        </li>
+
+        <li>
+             {{ cliente.edad }}
+            
+        </li>
+        {% endfor %}
+    </ul>
+    {% endblock parte1 %}
